@@ -3,7 +3,7 @@
     <header>
       <div class="main-header">
         <h1>Timothée Picard</h1>
-        <h2>d<span class="type" style="--n:23">éveloppeur web frontend</span></h2>
+        <h2>D<span class="type" style="--n:23">éveloppeur web frontend</span></h2>
         <div class="links">
           <a href="https://github.com/Timothee-Picard/" target="_blank">
             <i class="fa-brands fa-github"></i>
@@ -24,14 +24,65 @@
         <template #title>Développement</template>
         zkoujrezj keziuj jhziu hje dj zeidhn zeiojcdnez jdni
       </card-hover>
-      <card-hover v-bind:class-icon="'fa-solid fa-fill-drip'">
+      <card-hover v-bind:class-icon="'fa-solid fa-fill-drip'" v-bind:linkTo="'http://www.google.com'">
         <template #title>Graphisme</template>
       </card-hover>
-      <card-hover v-bind:class-icon="'fa-solid fa-list-check'">
+      <card-hover v-bind:class-icon="'fa-solid fa-list-check'" v-bind:linkTo="'http://www.google.com'">
         <template #title>Gestion de projet</template>
       </card-hover>
     </div>
   </div>
+  <section class="triangle">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt velit a enim dictum, nec euismod
+      erat feugiat. Duis ut enim ac augue pretium vehicula vel vel lectus. Sed placerat mauris felis, non bibendum
+      nunc cursus eu. Nulla pharetra suscipit elementum. Vestibulum in nisl eu sapien feugiat fringilla. Curabitur
+      suscipit vestibulum felis, in ullamcorper magna vulputate at. Etiam sit amet sem id nunc eleifend consequat.
+      Curabitur eget nibh fermentum, eleifend massa ut, vehicula orci. Nunc id dapibus nisi. Donec posuere odio sit
+      amet eros eleifend, sed dictum tortor ullamcorper. Maecenas at velit mollis, efficitur leo sed, egestas nisi.
+      Sed aliquam eleifend est, eget posuere eros scelerisque in.
+
+      Morbi pulvinar malesuada libero non congue. Cras sed lectus eget neque mollis consectetur non et justo. Curabitur
+      sit amet turpis rutrum, blandit massa ac, hendrerit odio. In lacinia enim orci, sit amet hendrerit sapien maximus
+      quis. Duis posuere dui sed orci bibendum, at condimentum sem porttitor. Proin porta iaculis blandit. Sed non orci
+      sollicitudin, sagittis elit sed, fringilla erat. Orci varius natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus.
+
+      Fusce quis magna tortor. Sed vitae velit vitae lorem elementum pellentesque. Sed sagittis dignissim pellentesque.
+      Donec pharetra justo vel sollicitudin fringilla. Praesent porttitor ac urna ut congue. Pellentesque aliquam augue
+      at faucibus finibus. Vestibulum pharetra hendrerit rhoncus. Quisque semper felis est, id luctus risus placerat id.
+      Curabitur lacinia sodales neque, rutrum pulvinar sem hendrerit nec. In pretium dolor tincidunt dui mollis aliquam.
+      Donec eget iaculis lacus. Praesent egestas aliquet velit, rutrum feugiat tortor lacinia eget. Nulla non
+      pellentesque leo. Proin ac tortor dignissim, vehicula lorem non, elementum mi. Sed orci eros, porttitor efficitur
+      velit sed, euismod dignissim ligula.
+    </p>
+  </section>
+
+  <section>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt velit a enim dictum, nec euismod
+      erat feugiat. Duis ut enim ac augue pretium vehicula vel vel lectus. Sed placerat mauris felis, non bibendum
+      nunc cursus eu. Nulla pharetra suscipit elementum. Vestibulum in nisl eu sapien feugiat fringilla. Curabitur
+      suscipit vestibulum felis, in ullamcorper magna vulputate at. Etiam sit amet sem id nunc eleifend consequat.
+      Curabitur eget nibh fermentum, eleifend massa ut, vehicula orci. Nunc id dapibus nisi. Donec posuere odio sit
+      amet eros eleifend, sed dictum tortor ullamcorper. Maecenas at velit mollis, efficitur leo sed, egestas nisi.
+      Sed aliquam eleifend est, eget posuere eros scelerisque in.
+
+      Morbi pulvinar malesuada libero non congue. Cras sed lectus eget neque mollis consectetur non et justo. Curabitur
+      sit amet turpis rutrum, blandit massa ac, hendrerit odio. In lacinia enim orci, sit amet hendrerit sapien maximus
+      quis. Duis posuere dui sed orci bibendum, at condimentum sem porttitor. Proin porta iaculis blandit. Sed non orci
+      sollicitudin, sagittis elit sed, fringilla erat. Orci varius natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus.
+
+      Fusce quis magna tortor. Sed vitae velit vitae lorem elementum pellentesque. Sed sagittis dignissim pellentesque.
+      Donec pharetra justo vel sollicitudin fringilla. Praesent porttitor ac urna ut congue. Pellentesque aliquam augue
+      at faucibus finibus. Vestibulum pharetra hendrerit rhoncus. Quisque semper felis est, id luctus risus placerat id.
+      Curabitur lacinia sodales neque, rutrum pulvinar sem hendrerit nec. In pretium dolor tincidunt dui mollis aliquam.
+      Donec eget iaculis lacus. Praesent egestas aliquet velit, rutrum feugiat tortor lacinia eget. Nulla non
+      pellentesque leo. Proin ac tortor dignissim, vehicula lorem non, elementum mi. Sed orci eros, porttitor efficitur
+      velit sed, euismod dignissim ligula.
+    </p>
+  </section>
 </template>
 
 <script>
@@ -46,7 +97,31 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/var";
+.triangle {
+  position: relative;
+  background: $color-dark-green;
+  margin-bottom: 50px;
+  padding: 5em 0;
+}
+section {
+  p {
+    max-width: 900px;
+    margin: auto;
+  }
+}
 
+.triangle::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 70px 0 70px;
+  border-color: $color-dark-green transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
 .container{
   width: 100%;
   min-height: 500px;
@@ -73,7 +148,7 @@ export default {
   background-repeat: no-repeat;
   animation:
       b .7s infinite steps(1),
-      t calc(var(--n)*.3s) steps(var(--n)) forwards;
+      t calc(var(--n)*.2s) steps(var(--n)) forwards;
 }
 
 @keyframes t{
@@ -112,6 +187,7 @@ header
     h1
     {
       font-size: 5em;
+      text-transform: capitalize;
       @media only screen and (max-width: 524px)
         {
           font-size: 3em;
@@ -122,6 +198,7 @@ header
       overflow: hidden;
       font-size:50px;
       padding:20px;
+      text-transform: capitalize;
       &:before {
         content: "a";
         width: 100%;
@@ -183,27 +260,28 @@ header
       position: relative;
       padding: 1em;
       border: 1em solid $color-dark-green;
-      &::before
+      &::before, &::after
       {
         content: '';
         position: absolute;
-        top: -1em;
-        left: 62%;
         height: 1em;
         width: 4em;
         background-color: $color-white;
         transition: 0.5s;
+        @media only screen and (max-width: 424px)
+        {
+          width: 3em;
+        }
+      }
+      &::before
+      {
+        top: -1em;
+        left: 62%;
       }
       &::after
       {
-        content: '';
-        position: absolute;
         bottom: -1em;
         left: 15%;
-        height: 1em;
-        width: 4em;
-        background-color: $color-white;
-        transition: 0.5s;
       }
       >div
       {
@@ -231,14 +309,24 @@ header
       }
       &:hover
       {
-        &:after
+        &:after,&:before
         {
           width: 8em;
+          @media only screen and (max-width: 424px)
+          {
+            width: 6em;
+          }
+        }
+        &:after
+        {
           left: 62%;
+          @media only screen and (max-width: 1439px)
+          {
+            left: 48%;
+          }
         }
         &:before
         {
-          width: 8em;
           left: 15%;
         }
       }
