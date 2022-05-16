@@ -101,26 +101,38 @@ export default {
   position: relative;
   background: $color-dark-green;
   margin-bottom: 50px;
-  padding: 5em 0;
+  padding: 7em 0 5em;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 70px 0 70px;
+    border-color: $color-white transparent transparent transparent;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 70px 0 70px;
+    border-color: $color-dark-green transparent transparent transparent;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+  }
 }
+
 section {
   p {
     max-width: 900px;
     margin: auto;
   }
-}
-
-.triangle::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 50px 70px 0 70px;
-  border-color: $color-dark-green transparent transparent transparent;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
 }
 .container{
   width: 100%;
