@@ -96,7 +96,7 @@ export default {
   &:hover, &:focus-within{
     .face{
       &.face1{
-        background: #FF6F59;
+        background: $color-red;
         color: rgba(247, 247, 247, 1);
         transform: translateY(0);
       }
