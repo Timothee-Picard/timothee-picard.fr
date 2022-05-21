@@ -64,7 +64,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
       box-sizing: border-box;
       z-index: -1;
       box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
@@ -86,7 +86,8 @@ export default {
           transition: 0.5s;
           &:hover, &:focus {
             cursor: pointer;
-            background-color: $color-dark-green;
+            background-color: $color-red;
+            border-color: $color-red;
             color: $color-white;
           }
         }
