@@ -13,7 +13,7 @@
     <div class="face face2">
       <div class="content">
         <p><slot>aaaaaaaaaaa</slot></p>
-        <a :href="linkTo">En savoir plus</a>
+        <a v-if="linkTo" :href="linkTo">En savoir plus</a>
       </div>
     </div>
   </div>

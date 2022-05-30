@@ -2,6 +2,7 @@
   <section-header></section-header>
   <section-skills></section-skills>
   <section class="triangle">
+    <h3>AAAA</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt velit a enim dictum, nec euismod
       erat feugiat. Duis ut enim ac augue pretium vehicula vel vel lectus. Sed placerat mauris felis, non bibendum
@@ -71,6 +72,7 @@ export default {
 .triangle {
   position: relative;
   background: $color-dark-green;
+  color: $color-white;
   margin-bottom: 50px;
   padding: 7em 0 5em;
   &::before {

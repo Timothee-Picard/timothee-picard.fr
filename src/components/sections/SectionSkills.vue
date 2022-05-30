@@ -1,27 +1,29 @@
 <template>
   <section class="container">
-    <card-hover v-bind:classIcon="'fa-solid fa-laptop-code'" v-bind:linkTo="'http://www.google.com'">
+    <card-hover v-bind:classIcon="'fa-solid fa-laptop-code'"> <!-- v-bind:linkTo="'http://www.google.com'" -->
       <template #title>Développement</template>
       <bold>Frontend:</bold><br>
       Vuejs, Angular, Reactjs <br>
       <bold>Backend:</bold><br>
       Php, Ruby, Nodejs<br>
       <bold>Framework:</bold><br>
-      Symfony, Rails, Strapi
+      Symfony, Wordpress, Rails, Strapi
     </card-hover>
-    <card-hover v-bind:class-icon="'fa-solid fa-fill-drip'" v-bind:linkTo="'http://www.google.com'">
+    <card-hover v-bind:class-icon="'fa-solid fa-fill-drip'">
       <template #title>Graphisme</template>
       <bold>Image:</bold><br>
       Photoshop, Figma, Lightroom <br>
       <bold>Vidéo:</bold><br>
       Première Pro, Animate<br>
     </card-hover>
-    <card-hover v-bind:class-icon="'fa-solid fa-list-check'" v-bind:linkTo="'http://www.google.com'">
-      <template #title>Gestion de projet</template>
+    <card-hover v-bind:class-icon="'fa-solid fa-list-check'">
+      <template #title>Cahier des charges</template>
+      <bold>Gestion de projet:</bold><br>
+      Trello, Gant, Clickup<br>
       <bold>Design:</bold><br>
-      Maquette, Charte graphique, Logo...<br>
-      <bold>Temps:</bold><br>
-      Trello, Gant, diagramme de classe...<br>
+      Webdesign, UI / UX<br>
+      <bold>Test:</bold><br>
+      Fonctionnel, Performances<br>
     </card-hover>
   </section>
 </template>
