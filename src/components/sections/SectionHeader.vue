@@ -3,6 +3,14 @@
     <div class="main-header">
       <h1>Timothée Picard</h1>
       <h2>D<span class="type" style="--n:23">éveloppeur web frontend</span></h2>
+      <div id="contentContactButton">
+        <button>
+          <i class="fa-regular fa-paper-plane"></i>
+          <span>
+            Contactez-moi
+          </span>
+        </button>
+      </div>
       <div class="links">
         <a href="https://github.com/Timothee-Picard/" target="_blank">
           <i class="fa-brands fa-github"></i>
@@ -22,12 +30,94 @@
 
 <script>
 export default {
-  name: "SectionHeader"
+  name: "SectionHeader",
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll () {
+      const contentbutton = document.getElementById("contentContactButton")
+      const button = contentbutton.querySelector("button")
+      if(contentbutton.getBoundingClientRect().y <= 0) {
+        button.classList.add("icon")
+      }
+      else {
+        button.classList.remove("icon")
+      }
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/var";
+#contentContactButton {
+  height: 6em;
+  display: flex;
+  align-items: end;
+  button {
+    z-index: 999;
+    right: 75vw;
+    bottom: 100vh;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border: 1px solid $color-white;
+    background-color: $color-dark-green;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: right 1s, bottom 1s;
+    @media only screen and (max-width: 1023px)
+    {
+      right: 50vw;
+    }
+    i {
+      margin-right: 1em;
+    }
+    span {
+      display: block;
+    }
+    &.icon {
+      position: fixed;
+      bottom: 1.5em;
+      right: 1.5em;
+      height: 2.5em;
+      width: 2.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-dark-green;
+      border-radius: 50%;
+      border-width: 3px;
+      font-size: 2em;
+      padding: 0;
+      @media only screen and (max-width: 1023px)
+      {
+        bottom: 0.5em;
+        right: 0.5em;
+        font-size: 1.2em;
+      }
+      i {
+        margin-right: 0;
+      }
+      span {
+        display: none;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $color-white;
+      color: $color-dark-green;
+      border-color: $color-dark-green;
+    }
+  }
+}
 header
 {
   display: flex;
