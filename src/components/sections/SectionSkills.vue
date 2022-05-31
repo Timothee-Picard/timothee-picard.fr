@@ -46,6 +46,7 @@ export default {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  margin: 3em 0;
   @media only screen and (max-width: 1023px)
   {
     flex-direction: column;

@@ -1,11 +1,11 @@
 <template>
   <div class="experience">
     <div class="date">
-          <span>
-            <time datetime="2010">2010</time>
-            -
-            <time datetime="2012">2012</time>
-          </span>
+      <span>
+        <time :datetime="date1">{{ date1 }}</time>
+        <div v-if="date2">-</div>
+        <time :datetime="date2">{{ date2 }}</time>
+      </span>
     </div>
     <div class="dropdown">
       <div class="ico" :class="{ open : state }" @click="toggle()">
@@ -15,11 +15,9 @@
       <div class="thread"></div>
     </div>
     <div class="experience-content">
-      <h4>MASTERS DEGREE - UNIVERSITY NAME</h4>
+      <h4><slot name="title">MASTERS DEGREE - UNIVERSITY NAME</slot></h4>
       <p :class="{ open : state }">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-        laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+        <slot></slot>
       </p>
     </div>
   </div>
@@ -33,7 +31,7 @@ export default {
       state: this.default
     }
   },
-  props: ['default'],
+  props: ['default', 'date1', 'date2'],
   methods: {
     toggle() {
       (this.state) ? this.state = false : this.state = true
@@ -44,6 +42,9 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/var";
+h4 {
+  text-transform: uppercase;
+}
 .thread {
   width: 0;
   height: 100%;
@@ -51,14 +52,33 @@ export default {
   margin: auto;
 }
 .experience {
+  position: relative;
   display: flex;
   gap: 2em;
+  padding: 0 0.5em;
+  @media only screen and (max-width: 1023px)
+  {
+    flex-direction: column;
+  }
+}
+.dropdown {
+  @media only screen and (max-width: 1023px)
+  {
+    position: absolute;
+    top: calc(51px + 1em);
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    z-index: 0;
+  }
 }
 .date span {
   display: flex;
   background-color: $color-red;
   padding: 1em;
   border-radius: 5px;
+  width: fit-content;
+  margin: auto;
 }
 .ico {
   height: 52px;
@@ -89,18 +109,24 @@ export default {
   }
 }
 .experience-content {
+  @media only screen and (max-width: 1023px)
+  {
+    margin-top: calc(2em + 25px);
+  }
   flex-grow: 1;
   text-align: left;
   padding: 1em;
   border: 1px solid $color-white;
+  background-color: $color-dark-green;
+  z-index: 1;
 }
 .experience-content p {
-  margin-top: 0.5em;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   transition: 0.3s;
   &.open {
-    height: 100px;
+    max-height: 250px;
+    margin-top: 0.5em;
   }
 }
 </style>

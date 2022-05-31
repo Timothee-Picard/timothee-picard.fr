@@ -2,10 +2,25 @@
   <section>
     <div class="content">
       <h3>Expérience profesionelle</h3>
-      <component-experience default="true"></component-experience>
-      <component-experience></component-experience>
-      <component-experience></component-experience>
-      <component-experience></component-experience>
+      <component-experience date1="2020" date2="2023" default="true">
+        <template #title>Analyste programmeur - Atnos</template>
+        En alternance, je participe à la création de l'interface utilisateur de
+        sites ou d'applications web. Je peut intervenir sur tous les éléments
+        apparaissant à l'écran et géré par le navigateur web de l'utilisateur.
+      </component-experience>
+      <component-experience date1="2020" date2="2020">
+        <template #title>Community manager - Bigfic</template>
+        En alternance, je m'occupai de toute la communication autant par
+        la mise à jour des articles sur le site web que par la créations de
+        contenu pour Youtube, Facebook, Instagram, Flyers ...
+      </component-experience>
+      <component-experience date1="2019" date2="2020">
+        <template #title>Développeur web - Ekalia</template>
+        En stage au sein d'une association, j'ai dû réaliser des supports
+        visuels pour Twitter.<br>
+        J'ai aussi dû réalisé une maquette de site web pour enfin l'intégrer
+        en HTML-CSS
+      </component-experience>
     </div>
   </section>
 </template>
@@ -22,6 +37,9 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/var";
+h3 {
+  font-size: 1.5em;
+}
 section {
   position: relative;
   background: $color-dark-green;
