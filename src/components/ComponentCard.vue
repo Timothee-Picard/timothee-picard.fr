@@ -1,6 +1,7 @@
 <template>
   <div class="card-hover">
     <div class="face face1">
+      <i class="fa-regular fa-hand-pointer"></i>
       <div class="content">
         <slot name="icon">
           <i :class="classIcon ? classIcon : 'fa-solid fa-code'"></i>
@@ -41,11 +42,23 @@ export default {
     &.face1{
       background: $color-dark-green;
       color: rgba(247, 247, 247, 0.6);
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       transition: 0.5s;
       transform: translateY(100px);
+      .fa-hand-pointer {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        font-size: 1.4em;
+        display: none;
+        @media only screen and (max-width: 1023px)
+        {
+          display: block;
+        }
+      }
       .content {
         font-size: 1.5em;
         display: flex;
