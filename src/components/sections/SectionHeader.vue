@@ -55,7 +55,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/var";
 #contentContactButton {
-  height: 6em;
+  height: 5em;
   display: flex;
   align-items: end;
   button {
@@ -127,7 +127,7 @@ header
 {
   min-height: 70vh;
   width: 50%;
-  padding: 10px;
+  padding: 6em 1em;
   @media only screen and (max-width: 1023px)
   {
     min-height: 60vh;

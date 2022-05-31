@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <card-hover v-bind:classIcon="'fa-solid fa-laptop-code'"> <!-- v-bind:linkTo="'http://www.google.com'" -->
+    <component-card v-bind:classIcon="'fa-solid fa-laptop-code'"> <!-- v-bind:linkTo="'http://www.google.com'" -->
       <template #title>Développement</template>
       <bold>Frontend:</bold><br>
       Vuejs, Angular, Reactjs <br>
@@ -8,15 +8,15 @@
       Php, Ruby, Nodejs<br>
       <bold>Framework:</bold><br>
       Symfony, Wordpress, Rails, Strapi
-    </card-hover>
-    <card-hover v-bind:class-icon="'fa-solid fa-fill-drip'">
+    </component-card>
+    <component-card v-bind:class-icon="'fa-solid fa-fill-drip'">
       <template #title>Graphisme</template>
       <bold>Image:</bold><br>
       Photoshop, Figma, Lightroom <br>
       <bold>Vidéo:</bold><br>
       Première Pro, Animate<br>
-    </card-hover>
-    <card-hover v-bind:class-icon="'fa-solid fa-list-check'">
+    </component-card>
+    <component-card v-bind:class-icon="'fa-solid fa-list-check'">
       <template #title>Cahier des charges</template>
       <bold>Gestion de projet:</bold><br>
       Trello, Gant, Clickup<br>
@@ -24,16 +24,16 @@
       Webdesign, UI / UX<br>
       <bold>Test:</bold><br>
       Fonctionnel, Performances<br>
-    </card-hover>
+    </component-card>
   </section>
 </template>
 
 <script>
-import CardHover from "@/components/CardHover";
+import ComponentCard from "@/components/ComponentCard";
 export default {
   name: "SectionSkills",
   components: {
-    CardHover
+    ComponentCard
   }
 }
 </script>
