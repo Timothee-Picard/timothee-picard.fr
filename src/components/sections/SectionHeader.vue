@@ -4,12 +4,14 @@
       <h1>Timothée Picard</h1>
       <h2>D<span class="type" style="--n:23">éveloppeur web frontend</span></h2>
       <div id="contentContactButton">
-        <button>
-          <i class="fa-regular fa-paper-plane"></i>
-          <span>
+        <a href="#contact">
+          <button>
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>
             Contactez-moi
           </span>
-        </button>
+          </button>
+        </a>
       </div>
       <div class="links">
         <a href="https://github.com/Timothee-Picard/" target="_blank">

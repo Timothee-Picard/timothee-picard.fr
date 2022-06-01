@@ -1,26 +1,32 @@
 <template>
   <nav>
     <ul>
-      <li id="menuSection1" class="active">
-        <a href="#section1">
+      <li class="active">
+        <a href="#accueil">
           <span>Accueil</span>
           <div class="circle"></div>
         </a>
       </li>
-      <li id="menuSection2">
-        <a href="#section2">
+      <li>
+        <a href="#competences">
           <span>Compétences</span>
           <div class="circle"></div></a>
       </li>
-      <li id="menuSection3">
-        <a href="#section3">
+      <li>
+        <a href="#experiences">
           <span>Expériences</span>
           <div class="circle"></div>
         </a>
       </li>
-      <li id="menuSection4">
-        <a href="#section4">
+      <li>
+        <a href="#diplomes">
           <span>Diplômes</span>
+          <div class="circle"></div>
+        </a>
+      </li>
+      <li>
+        <a href="#contact">
+          <span>Contact</span>
           <div class="circle"></div>
         </a>
       </li>
