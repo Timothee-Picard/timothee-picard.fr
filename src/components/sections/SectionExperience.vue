@@ -44,7 +44,6 @@ section {
   position: relative;
   background: $color-dark-green;
   color: $color-white;
-  margin-bottom: 50px;
   padding: 5em 0;
   &::before {
     content: '';

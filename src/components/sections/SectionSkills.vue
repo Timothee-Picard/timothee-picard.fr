@@ -46,14 +46,14 @@ export default {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  margin: 3em 0;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  padding: 3em 0;
   @media only screen and (max-width: 1023px)
   {
     flex-direction: column;
   }
-  justify-content: center;
-  align-items: center;
-  gap: 3em;
 }
 bold {
   font-weight: bold

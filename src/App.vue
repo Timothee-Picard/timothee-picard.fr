@@ -13,6 +13,10 @@ export default {
 
 <style lang="scss">
 @import "@/assets/var";
+html
+{
+  scroll-behavior: smooth;
+}
 *
 {
   margin: 0;
@@ -24,6 +28,10 @@ a
   text-decoration: none;
   color: inherit;
 }
+li
+{
+  list-style: none;
+}
 #app {
   text-align: center;
   color: $color-text;
@@ -32,5 +40,9 @@ a
 }
 body {
   background-color: $color-white;
+}
+::-webkit-scrollbar
+{
+  display: none;
 }
 </style>
