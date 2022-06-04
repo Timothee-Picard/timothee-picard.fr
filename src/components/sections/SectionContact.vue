@@ -40,13 +40,12 @@ export default {
   name: "SectionContact",
   methods: {
     sendEmail() {
-      console.log('Mail !!')
-      // emailjs.sendForm(process.env.VUE_APP_SERVICE_ID, process.env.VUE_APP_TEMPLATE_ID, this.$refs.form, process.env.VUE_APP_PUBLIC_KEY)
-      //     .then((result) => {
-      //       console.log('SUCCESS!', result.text);
-      //     }, (error) => {
-      //       console.log('FAILED...', error.text);
-      //     });
+      emailjs.sendForm(process.env.VUE_APP_SERVICE_ID, process.env.VUE_APP_TEMPLATE_ID, this.$refs.form, process.env.VUE_APP_PUBLIC_KEY)
+          .then((result) => {
+            console.log('SUCCESS!', result.text);
+          }, (error) => {
+            console.log('FAILED...', error.text);
+          });
     }
   }
 }
