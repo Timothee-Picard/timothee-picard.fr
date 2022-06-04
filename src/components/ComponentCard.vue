@@ -35,7 +35,7 @@ export default {
   @media only screen and (max-width: 524px) {
   }
   .face {
-    width: 350px;
+    width: 320px;
     max-width: 100vw;
     height: 200px;
     transition: 0.5s;

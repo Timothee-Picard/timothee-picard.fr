@@ -87,8 +87,8 @@ export default {
     }
     &.icon {
       position: fixed;
-      bottom: 1.5em;
-      right: 1.5em;
+      bottom: 0.5em;
+      right: 0.5em;
       height: 2.5em;
       width: 2.5em;
       display: flex;

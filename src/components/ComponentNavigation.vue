@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul>
-      <li class="active">
+      <li>
         <a href="#accueil">
           <span>Accueil</span>
           <div class="circle"></div>
@@ -37,24 +37,47 @@
 <script>
 export default {
   name: "ComponentNavigation",
+  data() {
+    return {
+      savedIndex: null,
+    }
+  },
   created () {
     window.addEventListener('scroll', this.handleScroll);
+  },
+  mounted() {
+    this.handleScroll()
   },
   beforeUnmount () {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll () {
-      const sections = document.querySelectorAll('.section')
-      const nav = document.querySelector('nav')
-      const  li = nav.querySelectorAll('li')
-      sections.forEach((element, i) => {
-        if(element.getBoundingClientRect().bottom > 0 & element.getBoundingClientRect().y <= 0) {
-          li[i].classList.add("active")
-        } else {
-          li[i].classList.remove("active")
+      const sections = [...document.querySelectorAll('.section')]
+      const data = sections.map(section => section.offsetTop)
+      const trigger = window.scrollY + (window.innerHeight / 3)
+      for (const i of data) {
+        const index = data.indexOf(i)
+        if (trigger >= data[index] && trigger < data[index+1]){
+          if (index !== this.savedIndex) {
+            this.savedIndex = index
+            this.addClassAndClear(index)
+          }
+          break
         }
-      })
+        if (index === data.length -1 && trigger >= data[index]) {
+          if (index !== this.savedIndex) {
+            this.savedIndex = index
+            this.addClassAndClear(index)
+          }
+        }
+      }
+    },
+    addClassAndClear(index) {
+      const navLinks = [...document.querySelectorAll("nav li")]
+      const elToClean = navLinks.find(navLink => navLink.className.includes("active"))
+      if (elToClean) elToClean.classList.remove("active")
+      navLinks[index].classList.add("active")
     }
   }
 }
@@ -88,9 +111,17 @@ li {
     gap: 1em;
     width: min-content;
   }
-  @media only screen and (max-width: 1023px)
-  {
-    span {
+  span {
+    @media only screen and (max-width: 1439px)
+    {
+      color: transparent;
+      background-clip: text;
+      background-color: $color-dark-green;
+      width: 0;
+      transition: width 0.3s;
+    }
+    @media only screen and (max-width: 1023px)
+    {
       display: none;
     }
   }
@@ -99,6 +130,13 @@ li {
   }
   &:hover {
     color: $color-red;
+    span {
+      width: 120px;
+      @media only screen and (max-width: 1439px)
+      {
+        background-color: $color-red;
+      }
+    }
   }
 }
 .circle {

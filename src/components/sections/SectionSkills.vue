@@ -48,7 +48,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 1.5em;
   padding: 3em 0;
   @media only screen and (max-width: 1023px)
   {

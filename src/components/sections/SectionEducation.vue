@@ -1,28 +1,55 @@
 <template>
   <section>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt velit a enim dictum, nec euismod
-      erat feugiat. Duis ut enim ac augue pretium vehicula vel vel lectus. Sed placerat mauris felis, non bibendum
-      nunc cursus eu. Nulla pharetra suscipit elementum. Vestibulum in nisl eu sapien feugiat fringilla. Curabitur
-      suscipit vestibulum felis, in ullamcorper magna vulputate at. Etiam sit amet sem id nunc eleifend consequat.
-      Curabitur eget nibh fermentum, eleifend massa ut, vehicula orci. Nunc id dapibus nisi. Donec posuere odio sit
-      amet eros eleifend, sed dictum tortor ullamcorper. Maecenas at velit mollis, efficitur leo sed, egestas nisi.
-      Sed aliquam eleifend est, eget posuere eros scelerisque in.
-
-      Morbi pulvinar malesuada libero non congue. Cras sed lectus eget neque mollis consectetur non et justo. Curabitur
-      sit amet turpis rutrum, blandit massa ac, hendrerit odio. In lacinia enim orci, sit amet hendrerit sapien maximus
-      quis. Duis posuere dui sed orci bibendum, at condimentum sem porttitor. Proin porta iaculis blandit. Sed non orci
-      sollicitudin, sagittis elit sed, fringilla erat. Orci varius natoque penatibus et magnis dis parturient montes,
-      nascetur ridiculus mus.
-
-      Fusce quis magna tortor. Sed vitae velit vitae lorem elementum pellentesque. Sed sagittis dignissim pellentesque.
-      Donec pharetra justo vel sollicitudin fringilla. Praesent porttitor ac urna ut congue. Pellentesque aliquam augue
-      at faucibus finibus. Vestibulum pharetra hendrerit rhoncus. Quisque semper felis est, id luctus risus placerat id.
-      Curabitur lacinia sodales neque, rutrum pulvinar sem hendrerit nec. In pretium dolor tincidunt dui mollis aliquam.
-      Donec eget iaculis lacus. Praesent egestas aliquet velit, rutrum feugiat tortor lacinia eget. Nulla non
-      pellentesque leo. Proin ac tortor dignissim, vehicula lorem non, elementum mi. Sed orci eros, porttitor efficitur
-      velit sed, euismod dignissim ligula.
-    </p>
+    <h3>Mes diplômes</h3>
+    <div class="card">
+      <div class="leftBloc">
+        <div class="content">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Bac +3</span>
+        </div>
+        <div class="angle"></div>
+      </div>
+      <div class="rightBloc">
+        <h4>Développeur FrontEnd - 2023</h4>
+        <p>
+          Lorem ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a
+          ipsum a az a ipsum a az a ipsum a az a ip a az a ipsum a az a ip a az a
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="leftBloc">
+        <div class="content">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Bac +2</span>
+        </div>
+        <div class="angle"></div>
+      </div>
+      <div class="rightBloc">
+        <h4>DIMI - 2020</h4>
+        <p>
+          Lorem ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a
+          ipsum a az a ipsum a az a ipsum a az a ip a az a ipsum a az a ip a az a
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="leftBloc">
+        <div class="content">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Bac</span>
+        </div>
+        <div class="angle"></div>
+      </div>
+      <div class="rightBloc">
+        <h4>Bacalauréat STI2D - 2017</h4>
+        <p>
+          Lorem ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a ipsum a az a
+          ipsum a az a ipsum a az a ipsum a az a ip a az a ipsum a az a ip a az a
+          Lorem ipsum a az a ipsum a az a ipsum a az
+        </p>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -35,10 +62,68 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/var";
 section {
-  padding: 5em 0;
-  p {
-    max-width: 900px;
-    margin: auto;
+  padding: 6em 2em 6em calc(2em - 20px);
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+.card {
+  display: flex;
+}
+.leftBloc {
+  position: relative;
+  width: 250px;
+}
+h4 {
+  text-transform: uppercase;
+}
+.leftBloc .content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(20px, -20px);
+  background-color: $color-dark-green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  gap: 1em;
+  box-shadow: rgba(48, 94, 111, 0.35) 0px 5px 10px;
+  i {
+    font-size: 3em;
   }
+  span {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+.rightBloc {
+  background-color: white;
+  width: 100%;
+  min-height: 140px;
+  flex-grow: 1;
+  box-shadow: rgba(48, 94, 111, 0.35) 0px 5px 10px;
+  border-width: 0 !important;
+  text-align: left;
+  padding: 1em 1em 1em calc(1em + 20px);
+  p {
+    margin-top: 0.5em;
+  }
+}
+.angle {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  transform: translateX(20px);
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+  border-color: #96a5a9 transparent transparent transparent;
+  z-index: 999;
 }
 </style>

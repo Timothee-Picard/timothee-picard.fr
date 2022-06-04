@@ -40,9 +40,9 @@ li
 }
 body {
   background-color: $color-white;
-}
-::-webkit-scrollbar
-{
-  display: none;
+  &::-webkit-scrollbar
+  {
+    display: none;
+  }
 }
 </style>
