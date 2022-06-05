@@ -1,12 +1,14 @@
 <template>
   <router-view/>
+  <component-notification></component-notification>
 </template>
 
 <script>
+import ComponentNotification from "@/components/ComponentNotification";
 
 export default {
   components: {
-
+    ComponentNotification,
   }
 }
 </script>

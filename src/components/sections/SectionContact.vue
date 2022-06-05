@@ -9,11 +9,11 @@
     <aside>
       <form ref="form" @submit.prevent="sendEmail">
         <div class="form-group">
-          <input type="text" name="name" id="name" placeholder=" ">
+          <input type="text" name="name" id="name" placeholder=" " v-model="name" required>
           <label for="name">Nom</label>
         </div>
         <div class="form-group">
-          <input type="text" name="firstname" id="firstname" placeholder=" ">
+          <input type="text" name="firstname" id="firstname" placeholder=" " v-model="firstname" required>
           <label for="firstname">Prénom</label>
         </div>
         <div class="form-group">
@@ -25,7 +25,7 @@
          <label for="message">Message</label>
         </div>
         <div class="form-group">
-          <button type="submit">Envoyer</button>
+          <button type="submit" :disabled="emailSending">Envoyer</button>
         </div>
       </form>
     </aside>
@@ -33,20 +33,44 @@
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
 import emailjs from '@emailjs/browser';
+import {mapMutations} from "vuex";
 
 export default {
   name: "SectionContact",
+  data() {
+    return {
+      emailSending: false,
+      name: '',
+      firstname: '',
+    }
+  },
   methods: {
+    ...mapMutations([
+      'openToast'
+    ]),
     sendEmail() {
+      this.emailSending = true
       emailjs.sendForm(process.env.VUE_APP_SERVICE_ID, process.env.VUE_APP_TEMPLATE_ID, this.$refs.form, process.env.VUE_APP_PUBLIC_KEY)
           .then((result) => {
             console.log('SUCCESS!', result.text);
+            this.openToast(
+                {
+                  message: 'Email envoyé avec succés'
+                }
+            )
+            this.emailSending = false
           }, (error) => {
             console.log('FAILED...', error.text);
+            this.openToast(
+                {
+                  error: true,
+                  message: 'Erreur:' + error.text
+                }
+            )
+            this.emailSending = false
           });
-    }
+    },
   }
 }
 </script>
@@ -73,9 +97,16 @@ form {
     padding: 1em 4em;
     cursor: pointer;
     &:hover {
-      background-color: $color-red;
-      border: 1px solid $color-red;
+      border: 1px solid $color-dark-green;
+      background-color: $color-dark-green;
       color: $color-white;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      &:hover {
+        background-color: $color-red;
+        border: 1px solid $color-red;
+      }
     }
   }
   label {

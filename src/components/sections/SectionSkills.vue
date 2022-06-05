@@ -17,7 +17,7 @@
       Première Pro, Animate<br>
     </component-card>
     <component-card v-bind:class-icon="'fa-solid fa-list-check'">
-      <template #title>Cahier des charges</template>
+      <template #title>Gestion</template>
       <bold>Gestion de projet:</bold><br>
       Trello, Gant, Clickup<br>
       <bold>Design:</bold><br>
