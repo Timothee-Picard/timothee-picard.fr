@@ -24,7 +24,7 @@
     </div>
     <aside>
       <div class="imageProfile">
-        <div><img src="../assets/profile.png" alt=""></div>
+        <div><img src="../public/profile.png" alt=""></div>
       </div>
     </aside>
   </header>
