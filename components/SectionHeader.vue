@@ -28,18 +28,27 @@
       </div>
     </aside>
   </header>
+  <div>
+    Counter: {{ counter }}
+    <button @click="counter++">
+      +
+    </button>
+    <button @click="counter--">
+      -
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
   name: "SectionHeader",
   created () {
-    if (process.browser) {
+    if (process && process.browser) {
       window.addEventListener('scroll', this.handleScroll);
     }
   },
   beforeUnmount () {
-    if (process.browser) {
+    if (process && process.browser) {
       window.removeEventListener('scroll', this.handleScroll);
     }
   },
