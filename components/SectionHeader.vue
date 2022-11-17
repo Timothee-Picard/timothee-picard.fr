@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { Icon } from '#components'
+import { Icon } from 'components/global/NuxtIcon'
 
 const MyIcon = h(Icon, { name: 'uil:twitter' })
 </script>
