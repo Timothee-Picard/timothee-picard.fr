@@ -16,6 +16,7 @@
       <div class="links">
         <a href="https://github.com/Timothee-Picard/" target="_blank">
           <Icon name="fa6-brands:github" />
+          <MyIcon />
         </a>
         <a href="https://fr.linkedin.com/in/timoth%C3%A9e-picard" target="_blank">
           <Icon name="fa6-brands:linkedin-in" />
@@ -28,27 +29,25 @@
       </div>
     </aside>
   </header>
-  <div>
-    Counter: {{ counter }}
-    <button @click="counter++">
-      +
-    </button>
-    <button @click="counter--">
-      -
-    </button>
-  </div>
 </template>
+
+<script setup>
+import { Icon } from '#components'
+
+const MyIcon = h(Icon, { name: 'uil:twitter' })
+</script>
+
 
 <script>
 export default {
   name: "SectionHeader",
   created () {
-    if (process && process.browser) {
+    if (process.client) {
       window.addEventListener('scroll', this.handleScroll);
     }
   },
   beforeUnmount () {
-    if (process && process.browser) {
+    if (process.client) {
       window.removeEventListener('scroll', this.handleScroll);
     }
   },
