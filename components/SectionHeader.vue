@@ -16,7 +16,6 @@
       <div class="links">
         <a href="https://github.com/Timothee-Picard/" target="_blank">
           <Icon name="fa6-brands:github" />
-          <MyIcon />
         </a>
         <a href="https://fr.linkedin.com/in/timoth%C3%A9e-picard" target="_blank">
           <Icon name="fa6-brands:linkedin-in" />
@@ -30,13 +29,6 @@
     </aside>
   </header>
 </template>
-
-<script setup>
-import { Icon } from 'components/global/NuxtIcon'
-
-const MyIcon = h(Icon, { name: 'uil:twitter' })
-</script>
-
 
 <script>
 export default {
