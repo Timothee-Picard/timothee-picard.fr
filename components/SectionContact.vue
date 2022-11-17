@@ -2,8 +2,12 @@
   <section>
     <div class="main-contact">
       <div class="content">
-        <p><i class="fa-solid fa-envelope"></i><span>timothee-picard@outlook.fr</span></p>
-        <p><i class="fa-solid fa-phone"></i><span>+33 6 89 65 50 88</span></p>
+        <p>
+          <Icon name="fa6-regular:envelope" />
+          <span>timothee-picard@outlook.fr</span></p>
+        <p>
+          <Icon name="ph:phone-bold" />
+          <span>+33 6 89 65 50 88</span></p>
       </div>
     </div>
     <aside>
@@ -189,7 +193,7 @@ section {
     @media only screen and (max-width: 767px)
     {
       font-size: 1em;
-      i {
+      .icon {
         margin-right: 0.5em;
       }
     }
@@ -199,7 +203,7 @@ section {
     }
   }
 }
-i {
+.icon {
   margin-right: 1.5em;
 }
 </style>

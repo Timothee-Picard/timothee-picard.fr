@@ -6,7 +6,7 @@
       <div id="contentContactButton">
         <a href="#contact">
           <button>
-            <i class="fa-regular fa-paper-plane"></i>
+            <Icon name="fa6-regular:paper-plane" />
             <span>
             Contactez-moi
           </span>
@@ -17,7 +17,7 @@
         <a href="https://github.com/Timothee-Picard/" target="_blank">
           <Icon name="fa6-brands:github" />
         </a>
-        <a href="https://fr.linkedin.com/in/timoth%C3%A9e-picard" target="_blank">
+        <a href="https://fr.linkedin.com/in/timothee-picard" target="_blank">
           <Icon name="fa6-brands:linkedin-in" />
         </a>
       </div>
@@ -48,10 +48,10 @@ export default {
       const contentbutton = document.getElementById("contentContactButton")
       const button = contentbutton.querySelector("button")
       if(contentbutton.getBoundingClientRect().y <= 0) {
-        button.classList.add("icon")
+        button.classList.add("buttonIcon")
       }
       else {
-        button.classList.remove("icon")
+        button.classList.remove("buttonIcon")
       }
     }
   }
@@ -83,13 +83,13 @@ export default {
     {
       right: 50vw;
     }
-    i {
+    .icon {
       margin-right: 1em;
     }
     span {
       display: block;
     }
-    &.icon {
+    &.buttonIcon {
       position: fixed;
       bottom: 0.5em;
       right: 0.5em;
@@ -109,7 +109,7 @@ export default {
         right: 0.5em;
         font-size: 1.2em;
       }
-      i {
+      .icon {
         margin-right: 0;
       }
       span {
@@ -191,7 +191,7 @@ h2 {
     font-size: 1.5em;
   }
   a{
-    padding: 0.3em;
+    padding: 4px 8px 8px;
     background-size: 100% 200%;
     background-position: 0 5%;
     transition: background-position 0.5s, color 0.5s;

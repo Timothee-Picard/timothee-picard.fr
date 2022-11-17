@@ -1,10 +1,10 @@
 <template>
   <div class="card-hover">
     <div class="face face1">
-      <i class="fa-regular fa-hand-pointer"></i>
+      <Icon name="fa6-solid:hand-pointer" class="handPointer" />
       <div class="content">
         <slot name="icon">
-          <i :class="classIcon ? classIcon : 'fa-solid fa-code'"></i>
+          <Icon :name="nameIcon ? nameIcon : 'fa-solid:code'" />
         </slot>
         <h3>
           <slot name="title">Launch</slot>
@@ -23,7 +23,7 @@
 <script>
 export default {
   name: "ComponentCard",
-  props: ['linkTo', 'classIcon']
+  props: ['linkTo', 'nameIcon']
 }
 </script>
 
@@ -48,7 +48,7 @@ export default {
       align-items: center;
       transition: 0.5s;
       transform: translateY(100px);
-      .fa-hand-pointer {
+      .handPointer {
         position: absolute;
         top: 1em;
         right: 1em;
@@ -64,9 +64,9 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-center;
+        align-items: center;
         gap: 1em;
-        i {
+        .icon {
           font-size: 2em;
         }
       }

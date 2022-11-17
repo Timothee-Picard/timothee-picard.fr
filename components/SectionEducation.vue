@@ -4,7 +4,7 @@
     <div class="card">
       <div class="leftBloc">
         <div class="content">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <Icon name="fa-solid:graduation-cap" />
           <span>Bac +3</span>
         </div>
         <div class="angle"></div>
@@ -20,7 +20,7 @@
     <div class="card">
       <div class="leftBloc">
         <div class="content">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <Icon name="fa-solid:graduation-cap" />
           <span>Bac +2</span>
         </div>
         <div class="angle"></div>
@@ -36,7 +36,7 @@
     <div class="card">
       <div class="leftBloc">
         <div class="content">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <Icon name="fa-solid:graduation-cap" />
           <span>Bac</span>
         </div>
         <div class="angle"></div>
@@ -94,7 +94,7 @@ h4 {
   color: $color-white;
   gap: 1em;
   box-shadow: rgba(48, 94, 111, 0.35) 0px 5px 10px;
-  i {
+  .icon {
     font-size: 3em;
   }
   span {
